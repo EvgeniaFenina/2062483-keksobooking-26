@@ -1,24 +1,14 @@
 import {DELAY} from './constants.js';
 
-const RemaindersOfDivision= {
-  ONE : 1,
-  FIVE : 5
-};
-
-const RangeWhenUseThirdWord = {
-  FROM : 10,
-  TO : 20
-};
-
 const declinationString = (number, words) => {
   const value = number % 100;
-  if (value % 10 === RemaindersOfDivision.ONE) {
+  if (value % 10 === 1) {
     return words[0];
   }
-  if (value % 10 > RemaindersOfDivision.ONE && value % 10 < RemaindersOfDivision.FIVE || words[2] === undefined) {
+  if (value % 10 > 1 && value % 10 < 5 || words[2] === undefined) {
     return words[1];
   }
-  if (value > RangeWhenUseThirdWord.FROM && value < RangeWhenUseThirdWord.TO){
+  if (value > 10 && value < 20){
     return words[2];
   }
   return words[2];
